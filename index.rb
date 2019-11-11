@@ -1,13 +1,14 @@
 require 'curses'
+include Curses
 
 # initialises curses
-Curses.init_screen
+init_screen
 begin
   # the number of lines and columns available on the stdscr
-  nb_lines = Curses.lines
-  nb_cols = Curses.cols
+  nb_lines = lines
+  nb_cols = cols
 ensure
-  Curses.close_screen
+  close_screen
 end
 
 puts "Number of rows: #{nb_lines}"
